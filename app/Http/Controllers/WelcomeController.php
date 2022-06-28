@@ -43,10 +43,17 @@ class WelcomeController extends Controller
     public function render_books($page_nos = 1){
         // @todo Get limit from config in future
         $books = $this->get_books( $page_nos, $limit = 8);
-        return view('welcome', [
-            'books' => $books,
-            'current_page' => $page_nos
-        ]);
+        if($books){
+            return view('welcome', [
+                'books' => $books,
+                'current_page' => $page_nos
+            ]);
+        }
+        else{
+            return view('error', [
+                'message' => 'mismatched token'
+            ]);
+        }
     }
 
     public function render_image($product_id){
