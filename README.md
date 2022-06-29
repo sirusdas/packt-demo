@@ -1,4 +1,7 @@
 ## Installation instruction
+#### Prerequisits
+> Please follow the instructions given in this link https://laravel.com/docs/9.x as per your system. Just do not download their sample project.
+
 ```
 cd project_dir
 ./vendor/bin/sail up
